@@ -1,2 +1,2 @@
 # Script-en-Bash
-Repo con los archivos que uso para mi videos en youtube
+Repo para los script echos en bash
