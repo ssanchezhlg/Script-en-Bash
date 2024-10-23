@@ -17,7 +17,7 @@ jobs:
       run: |      
         echo "$PRIVATE_KEY" > private_key.pem
         chmod 600 private_key.pem
-        ssh -o StrictHostKeyChecking=no -i private_key.pem $USER_NAME@$HOSTNAME '
+        ssh -o StrictHostKeyChecking=no -i private_key.pem -p 9122 $USER_NAME@$HOSTNAME '
           touch /home/testing
           echo "todo OK"
         '	    
