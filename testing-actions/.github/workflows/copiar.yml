@@ -1,0 +1,5 @@
+name: GoDeploy2EC2
+
+on:
+  push:
+    branches: [ "main" ]
