@@ -1,0 +1,23 @@
+name: copiarFichero
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: Copiar fichero en el VPS
+      env:
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        HOSTNAME: ${{secrets.IP_ADDRESS}}
+        USER_NAME: ${{secrets.USER_NAME}}
+      run: |      
+        echo "$PRIVATE_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        ssh -o StrictHostKeyChecking=no -i private_key.pem $USER_NAME@$HOSTNAME '
+          touch /home/testing
+          echo "todo OK"
+        '	    
