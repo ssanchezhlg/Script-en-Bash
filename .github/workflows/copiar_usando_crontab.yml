@@ -1,4 +1,4 @@
-name: copiarFichero
+name: Copiar Usando Crontab
 
 on:
   schedule:
